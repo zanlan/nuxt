@@ -1,0 +1,52 @@
+{
+  "name": "jhjz-pc",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt --dotenv .env.dev",
+    "build:dev": "NUXT_ENV_COOL_WORD=freezing nuxt build --dotenv .env.dev",
+    "build:prod": "nuxt build --dotenv .env.production",
+    "build:stage": "nuxt build --dotenv .env.staging",
+    "serve:dev": "nuxt start --dotenv .env.dev",
+    "serve:prod": "nuxt start --dotenv .env.production",
+    "serve:stage": "nuxt start --dotenv .env.staging",
+    "generate:dev": "cross-env NUXT_ENV_STATIC=true nuxt generate --dotenv .env.dev",
+    "generate:prod": "cross-env NUXT_ENV_STATIC=true nuxt generate --dotenv .env.production",
+    "generate:stage": "cross-env NUXT_ENV_STATIC=true nuxt generate --dotenv .env.staging",
+    "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "lint:js:fix": "eslint --fix --ext .js,.vue --ignore-path .gitignore .",
+    "lint": "npm run lint:js",
+    "start:stage": "pm2 start npm --name jhjzfund-web-website -- run serve:stage",
+    "start": "pm2 start npm --name jhjzfund-web-website -- run serve:prod",
+    "stop": "pm2 stop jhjzfund-web-website && pm2 delete jhjzfund-web-website"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.13.1",
+    "cookie-universal-nuxt": "^2.1.4",
+    "core-js": "^3.8.3",
+    "echarts": "^5.0.2",
+    "element-resize-detector": "^1.2.2",
+    "element-ui": "^2.15.1",
+    "normalize.css": "^8.0.1",
+    "nuxt": "^2.15.4",
+    "show-toast": "^1.1.4"
+  },
+  "devDependencies": {
+    "@nuxtjs/eslint-config": "^5.0.0",
+    "@nuxtjs/eslint-module": "^3.0.2",
+    "@nuxtjs/style-resources": "^1.0.0",
+    "babel-eslint": "^10.1.0",
+    "babel-plugin-component": "^1.1.1",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.18.0",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-nuxt": "^2.0.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-vue": "^7.5.0",
+    "postcss-pxtorem": "^5.1.1",
+    "prettier": "^2.2.1",
+    "sass": "^1.32.8",
+    "sass-loader": "^10.1.1",
+    "svg-sprite-loader": "^6.0.2"
+  }
+}
